@@ -185,6 +185,10 @@ class ItemScrollController {
 
   _ScrollablePositionedListState? _scrollableListState;
 
+  void setAligment({required double alignment}){
+    _scrollableListState!.setAligment(alignment: alignment);
+  }
+
   /// Immediately, without animation, reconfigure the list so that the item at
   /// [index]'s leading edge is at the given [alignment].
   ///
@@ -419,6 +423,12 @@ class _ScrollablePositionedListState extends State<ScrollablePositionedList>
     setState(() {
       primary.scrollController.jumpTo(0);
       primary.target = index;
+      primary.alignment = alignment;
+    });
+  }
+
+  void setAligment({required double alignment}){
+    setState(() {
       primary.alignment = alignment;
     });
   }
