@@ -74,6 +74,8 @@ class VisibilityDetectorDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: title,
+      scrollBehavior:
+          const MaterialScrollBehavior().copyWith(scrollbars: false),
       theme: ThemeData(primarySwatch: Colors.blue),
       home: VisibilityDetectorDemoPage(key: key, useSlivers: useSlivers),
     );
@@ -527,7 +529,7 @@ class RowColumn extends Comparable<RowColumn> {
   }
 
   @override
-  int get hashCode => hashValues(row, column);
+  int get hashCode => Object.hash(row, column);
 
   /// See [Comparable.compareTo].  Sorts [RowColumn] objects in row-major order.
   @override
