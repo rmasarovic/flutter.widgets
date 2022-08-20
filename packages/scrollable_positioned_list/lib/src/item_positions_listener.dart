@@ -24,11 +24,14 @@ class ItemPosition {
   const ItemPosition(
       {required this.index,
       required this.itemLeadingEdge,
-      required this.itemTrailingEdge});
+      required this.itemTrailingEdge,
+        required this.height});
 
   /// Index of the item.
   final int index;
 
+
+  final double height;
   /// Distance in proportion of the viewport's main axis length from the leading
   /// edge of the viewport to the leading edge of the item.
   ///
@@ -57,5 +60,5 @@ class ItemPosition {
 
   @override
   String toString() =>
-      'ItemPosition(index: $index, itemLeadingEdge: $itemLeadingEdge, itemTrailingEdge: $itemTrailingEdge)';
+      'ItemPosition(index: $index, itemLeadingEdge: $itemLeadingEdge, itemTrailingEdge: $itemTrailingEdge, height: $height)';
 }

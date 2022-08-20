@@ -338,7 +338,7 @@ class _PositionedListState extends State<PositionedList> {
                 itemLeadingEdge: itemOffset.round() /
                     scrollController.position.viewportDimension,
                 itemTrailingEdge: (itemOffset + box.size.height).round() /
-                    scrollController.position.viewportDimension));
+                    scrollController.position.viewportDimension,height: box.size.height));
           } else {
             final itemOffset =
                 box.localToGlobal(Offset.zero, ancestor: viewport).dx;
@@ -355,7 +355,7 @@ class _PositionedListState extends State<PositionedList> {
                                 itemOffset
                             : (itemOffset + box.size.width))
                         .round() /
-                    scrollController.position.viewportDimension));
+                    scrollController.position.viewportDimension,height: box.size.height));
           }
         }
         widget.itemPositionsNotifier?.itemPositions.value = positions;
